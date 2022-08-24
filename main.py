@@ -10,14 +10,14 @@ player_score = 0
 print("Welcome to the Rock, Paper, Scissors game")
 
 while play == True:
-    print("Instrukcja")
+    print("Choose rock, paper or scissors")
     computer_guess = random.choice(choices)
-    print(computer_guess)
     
     player_guess = input()
+    print("Computer chose", computer_guess)
     
     if computer_guess == player_guess:
-        print("Computer chose", computer_guess, "It's a draw!")
+        print("It's a draw!")
 
     elif player_guess == "rock":
         if computer_guess == "paper":
@@ -40,3 +40,9 @@ while play == True:
         elif computer_guess == "rock":
             computer_score += 1
             print("You lose!")
+    
+    print("Player score: ", player_score, "Computer score: ", computer_score)
+    play_again = input("Do you want to play again? y/n ")
+    if play_again == "n":
+        play = False
+    
